@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.adhamenaya.microchart.model.ChartData;
 import com.adhamenaya.microchart.utils.UiUtils;
 
 /**
@@ -36,8 +37,11 @@ public abstract class Chart extends View {
         invalidate();
     }
 
-    public abstract void paintChart(Canvas canvas);
+    protected abstract void paintChart(Canvas canvas);
+
     protected abstract void init();
+
+    protected abstract void setData(ChartData data);
 
     public Paint getTitlePaint() {
         Paint paint = new Paint();
@@ -47,19 +51,47 @@ public abstract class Chart extends View {
         return paint;
     }
 
-    public Paint getMainPaint(){
-        if (mMainPaint==null)
+    public Paint getMainPaint() {
+        if (mMainPaint == null)
             mMainPaint = new Paint();
 
         mMainPaint.setAntiAlias(true);
-        mMainPaint.setStrokeWidth(UiUtils.doToPx(mContext, 7));
+        mMainPaint.setStrokeWidth(UiUtils.dpToPx(mContext, 7));
         mMainPaint.setStyle(Paint.Style.STROKE);
         mMainPaint.setColor(mColor);
         return mMainPaint;
     }
-    public void setDimension(int width,int height){
+
+    public Paint getRectPaint() {
+        Paint paint = new Paint();
+
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(mColor);
+        return paint;
+    }
+
+    public void setDimension(int width, int height) {
         this.mWidth = width;
         this.mHeight = height;
         invalidate();
+    }
+
+    protected int getMeasurement(int measureSpec, int size) {
+        int specSize = MeasureSpec.getSize(measureSpec);
+        int measurement = 0;
+
+        switch (MeasureSpec.getMode(measureSpec)) {
+            case MeasureSpec.EXACTLY:
+                measurement = specSize;
+                break;
+            case MeasureSpec.AT_MOST:
+                measurement = Math.min(specSize, size);
+                break;
+            default:
+                measurement = size;
+        }
+
+        return size;
     }
 }

@@ -7,19 +7,16 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.support.annotation.IntegerRes;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 
+import com.adhamenaya.microchart.model.ChartData;
 import com.adhamenaya.microchart.utils.UiUtils;
 
 /**
  * Created by AENAYA on 26/09/2016.
  */
-public class PiChart extends Chart {
+public class PieChart extends Chart {
 
     private Context mContext;
     private int mCenterX;
@@ -37,13 +34,13 @@ public class PiChart extends Chart {
     private float percentage;
     protected int mMax;
 
-    public PiChart(Context context) {
+    public PieChart(Context context) {
         super(context);
         this.mContext = context;
         init();
     }
 
-    public PiChart(Context context, AttributeSet attributeSet) {
+    public PieChart(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.mContext = context;
         init();
@@ -53,29 +50,9 @@ public class PiChart extends Chart {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setStrokeWidth(UiUtils.doToPx(mContext, 0));
+        mPaint.setStrokeWidth(UiUtils.dpToPx(mContext, 0));
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.GRAY);
-    }
-
-
-
-    private int getMeasurement(int measureSpec, int size) {
-        int specSize = MeasureSpec.getSize(measureSpec);
-        int measurement = 0;
-
-            switch (MeasureSpec.getMode(measureSpec)) {
-                case MeasureSpec.EXACTLY:
-                    measurement = specSize;
-                    break;
-                case MeasureSpec.AT_MOST:
-                    measurement = Math.min(specSize, size);
-                    break;
-                default:
-                    measurement = size;
-            }
-
-        return size;
     }
 
     @Override
@@ -91,7 +68,7 @@ public class PiChart extends Chart {
 
         int circleWidth = mWidth - 60;
         int circleHeight = mHeight - 60;
-        int radius = (Math.min(circleWidth, circleHeight) - (int) UiUtils.doToPx(mContext, 2)) / 2 - 2;
+        int radius = (Math.min(circleWidth, circleHeight) - (int) UiUtils.dpToPx(mContext, 2)) / 2 - 2;
 
         mCenterX = circleWidth / 2;
         mCenterY = circleHeight / 2;
@@ -100,11 +77,11 @@ public class PiChart extends Chart {
         mPath.addCircle(mCenterX, mCenterY, radius, Path.Direction.CW);
 
         // Draw the inner circle
-        int innerRadius = radius - (int) UiUtils.doToPx(mContext, thickness);
+        int innerRadius = radius - (int) UiUtils.dpToPx(mContext, thickness);
 
         mPath.addCircle(mCenterX, mCenterY, innerRadius, Path.Direction.CW);
 
-        innerRadius += UiUtils.doToPx(mContext, 3);
+        innerRadius += UiUtils.dpToPx(mContext, 3);
 
         mRectF = new RectF(
                 mCenterX - innerRadius,
@@ -122,10 +99,9 @@ public class PiChart extends Chart {
         paintChart(canvas);
     }
 
-    public void setProgress(int progress,@Nullable boolean isRounded) {
+    public void setData(int progress) {
         this.mProgress = progress;
         percentage = mProgress * 100 / mMax;
-        if(isRounded) percentage = Math.round(percentage);
         mProgressAngel = (int) (percentage * 360 / 100);
         invalidate();
     }
@@ -162,9 +138,6 @@ public class PiChart extends Chart {
 
         canvas.drawText(text, mCenterX - (width / 2), mCenterY + (height / 2), paint);
 
-        int titleWidth = UiUtils.getTextBounds("Title test 1",getTitlePaint())[0];
-        int titleHeight = UiUtils.getTextBounds("Title test 1",getTitlePaint())[1];
-        canvas.drawText("Title test 1", mCenterX-(titleWidth/2) , mHeight-10, getTitlePaint());
     }
 
     public void setDimension(int width, int height) {
@@ -172,6 +145,10 @@ public class PiChart extends Chart {
         mWidth = Math.min(width, height);
         mHeight = mWidth;
         Log.d("--->",mWidth+"-"+mWidth);
+    }
+
+    @Override
+    protected void setData(ChartData data) {
 
     }
 }

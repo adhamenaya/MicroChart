@@ -9,11 +9,15 @@ import android.graphics.Rect;
  */
 public class UiUtils {
 
-    public static float doToPx(Context context, int dp) {
+    public static float dpToPx(Context context, int dp) {
         return context.getResources().getDisplayMetrics().density * dp;
     }
 
-    public static int[] getTextBounds(String text,Paint paint){
+    public static float toDp(Context context, int value) {
+        return value / context.getResources().getDisplayMetrics().density;
+    }
+
+    public static int[] getTextBounds(String text, Paint paint) {
         Rect bounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), bounds);
         int[] boundsArr = new int[2];
