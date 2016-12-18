@@ -16,7 +16,7 @@ import com.adhamenaya.microchart.utils.UiUtils;
 /**
  * Created by AENAYA on 26/09/2016.
  */
-public class PieChart extends Chart {
+public class RadialChart extends Chart {
 
     private Context mContext;
     private int mCenterX;
@@ -34,13 +34,13 @@ public class PieChart extends Chart {
     private float percentage;
     protected int mMax;
 
-    public PieChart(Context context) {
+    public RadialChart(Context context) {
         super(context);
         this.mContext = context;
         init();
     }
 
-    public PieChart(Context context, AttributeSet attributeSet) {
+    public RadialChart(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.mContext = context;
         init();

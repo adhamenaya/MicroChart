@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.adhamenaya.microchart.model.ChartData;
-import com.adhamenaya.microchart.view.BarChart;
-import com.adhamenaya.microchart.view.PieChart;
+import com.adhamenaya.microchart.view.ColumnChart;
+import com.adhamenaya.microchart.view.RadialChart;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,16 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout frameLayout = (LinearLayout) findViewById(R.id.lyt_main);
 
-        PieChart pieChart = new PieChart(getApplicationContext());
-        pieChart.setMax(100);
-        pieChart.setData(30);
-        pieChart.setColor(Color.GREEN);
-        pieChart.setDimension(300, 300);
-        frameLayout.addView(pieChart);
+        RadialChart radialChart = new RadialChart(getApplicationContext());
+        radialChart.setMax(100);
+        radialChart.setData(30);
+        radialChart.setColor(Color.GREEN);
+        radialChart.setDimension(300, 300);
+        frameLayout.addView(radialChart);
 
-        BarChart barChart = new BarChart(getApplicationContext());
-        barChart.setDimension(500, 200);
-        barChart.setBackgroundColor(Color.GRAY);
+        ColumnChart columnChart = new ColumnChart(getApplicationContext());
+        columnChart.setDimension(500, 200);
+        columnChart.setBackgroundColor(Color.GRAY);
         ChartData data = new ChartData();
         data.add("a", 100);
         data.add("b2", 200);
@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
         data.add("1d8", 340);
         data.add("1e8", 300);
         data.add("1e78", 300);
-        barChart.setData(data);
-        barChart.setColor(Color.BLUE);
-        frameLayout.addView(barChart);
+        columnChart.setData(data);
+        columnChart.setColor(Color.BLUE);
+        frameLayout.addView(columnChart);
 
     }
 }

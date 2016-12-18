@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by Admin on 18/12/2016.
  */
 
-public class BarChart extends Chart {
+public class ColumnChart extends Chart {
 
     private int mSpace = 0;
     private int mColumnSize = 0;
@@ -23,7 +23,7 @@ public class BarChart extends Chart {
     private int mCurrentStart = 0;
     private float mHeightUnit = 0;
 
-    public BarChart(Context context) {
+    public ColumnChart(Context context) {
         super(context);
     }
 
