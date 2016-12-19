@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.adhamenaya.microchart.model.ChartData;
+import com.adhamenaya.microchart.view.AreaChart;
 import com.adhamenaya.microchart.view.ColumnChart;
 import com.adhamenaya.microchart.view.RadialChart;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         ColumnChart columnChart = new ColumnChart(getApplicationContext());
         columnChart.setDimension(500, 200);
-        columnChart.setBackgroundColor(Color.GRAY);
         ChartData data = new ChartData();
         data.add("a", 100);
         data.add("b2", 200);
@@ -67,6 +69,27 @@ public class MainActivity extends AppCompatActivity {
         columnChart.setData(data);
         columnChart.setColor(Color.BLUE);
         frameLayout.addView(columnChart);
+
+        // Area chart
+        AreaChart areaChart = new AreaChart(getApplicationContext());
+        ChartData data2 = new ChartData();
+
+        data2.add("sami","c", 120);
+        data2.add("sami","d", 150);
+        data2.add("sami","dd", 170);
+        data2.add("sami","dd2", 140);
+        data2.add("sami","dd3", 110);
+        data2.add("aa","dd2", 220);
+        data2.add("aa","dd3", 230);
+        data2.add("aa","fr", 270);
+        data2.add("aa","dv", 1530);
+        data2.add("bb","fr", 789);
+        data2.add("bb","dv", 450);
+        data2.add("bb","dv4", 234);
+
+        areaChart.setDimension(500, 300);
+        areaChart.setData(data2);
+        frameLayout.addView(areaChart);
 
     }
 }

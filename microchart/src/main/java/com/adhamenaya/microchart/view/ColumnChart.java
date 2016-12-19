@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.util.Log;
 
 import com.adhamenaya.microchart.model.ChartData;
-import com.adhamenaya.microchart.utils.UiUtils;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -19,7 +18,6 @@ public class ColumnChart extends Chart {
     private int mSpace = 0;
     private int mColumnSize = 0;
     private int mColumnsCount = 0;
-    private ChartData mChartData;
     private int mCurrentStart = 0;
     private float mHeightUnit = 0;
 
@@ -28,9 +26,9 @@ public class ColumnChart extends Chart {
     }
 
     @Override
-    protected void init() {
-        if (mChartData != null && mChartData.data.size() > 0) {
-            mColumnsCount = mChartData.data.size();
+    protected void prepare() {
+        if (mChartData != null && mChartData.getSingleData().size() > 0) {
+            mColumnsCount = mChartData.getSingleData().size();
 
             // Column size, 1 is added to reserve a space at the end of the chart
             mColumnSize = (int) ((mWidth / (mColumnsCount)) * 0.9);
@@ -43,13 +41,14 @@ public class ColumnChart extends Chart {
             float height08 = mHeight * 0.8f;
             mHeightUnit = height08 / mChartData.getMax();
 
+
         }
     }
 
     @Override
     public void setData(ChartData data) {
         this.mChartData = data;
-        init();
+        prepare();
         invalidate();
     }
 
@@ -77,7 +76,7 @@ public class ColumnChart extends Chart {
     public void paintChart(Canvas canvas) {
 
         // Draw bars
-        Iterator iterator = mChartData.getData().entrySet().iterator();
+        Iterator iterator = mChartData.getSingleData().entrySet().iterator();
 
 
         while (iterator.hasNext()) {

@@ -21,6 +21,7 @@ public abstract class Chart extends View {
     protected int mHeight = 0;
     protected Context mContext;
     protected Paint mMainPaint;
+    protected ChartData mChartData;
 
     public Chart(Context context) {
         super(context);
@@ -39,9 +40,9 @@ public abstract class Chart extends View {
 
     protected abstract void paintChart(Canvas canvas);
 
-    protected abstract void init();
+    protected abstract void prepare();
 
-    protected abstract void setData(ChartData data);
+    public abstract void setData(ChartData data);
 
     public Paint getTitlePaint() {
         Paint paint = new Paint();
@@ -68,6 +69,14 @@ public abstract class Chart extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(mColor);
+        return paint;
+    }
+
+    public Paint getLinePaint(int color) {
+        Paint paint = new Paint();
+        paint.setStrokeWidth(UiUtils.dpToPx(mContext, 2));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(color);
         return paint;
     }
 

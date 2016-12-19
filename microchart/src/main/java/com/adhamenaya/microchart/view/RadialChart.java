@@ -37,16 +37,16 @@ public class RadialChart extends Chart {
     public RadialChart(Context context) {
         super(context);
         this.mContext = context;
-        init();
+        prepare();
     }
 
     public RadialChart(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.mContext = context;
-        init();
+        prepare();
     }
 
-    protected void init() {
+    protected void prepare() {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
@@ -148,7 +148,7 @@ public class RadialChart extends Chart {
     }
 
     @Override
-    protected void setData(ChartData data) {
+    public void setData(ChartData data) {
 
     }
 }
