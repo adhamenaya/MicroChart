@@ -82,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
         data2.add("aa","dd2", 220);
         data2.add("aa","dd3", 230);
         data2.add("aa","fr", 270);
-        data2.add("aa","dv", 1530);
-        data2.add("bb","fr", 789);
+        data2.add("bb","fr", 189);
         data2.add("bb","dv", 450);
         data2.add("bb","dv4", 234);
 

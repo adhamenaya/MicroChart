@@ -27,7 +27,7 @@ public class AreaChart extends Chart {
     private int mCurrentStart = 0;
     private int colorIndex = 0;
 
-    private int[] colors = {Color.RED, Color.BLUE, Color.YELLOW};
+    private int[] colors = {Color.RED, Color.BLUE, Color.GREEN};
 
     @Override
     public void setData(ChartData data) {
