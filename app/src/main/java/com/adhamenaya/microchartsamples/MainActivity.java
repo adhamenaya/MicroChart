@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import com.adhamenaya.microchart.model.ChartData;
 import com.adhamenaya.microchart.view.AreaChart;
 import com.adhamenaya.microchart.view.ColumnChart;
+import com.adhamenaya.microchart.view.HarveyBallChart;
 import com.adhamenaya.microchart.view.RadialChart;
 
 import java.util.HashMap;
@@ -89,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
         areaChart.setDimension(500, 300);
         areaChart.setData(data2);
         frameLayout.addView(areaChart);
+
+        // Harvey ball chart
+        HarveyBallChart harveyBallChart = new HarveyBallChart(getApplicationContext());
+        frameLayout.addView(harveyBallChart);
 
     }
 }

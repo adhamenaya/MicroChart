@@ -44,7 +44,7 @@ public abstract class Chart extends View {
 
     public abstract void setData(ChartData data);
 
-    public Paint getTitlePaint() {
+    protected Paint getTitlePaint() {
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.FILL);
@@ -52,7 +52,7 @@ public abstract class Chart extends View {
         return paint;
     }
 
-    public Paint getMainPaint() {
+    protected Paint getMainPaint() {
         if (mMainPaint == null)
             mMainPaint = new Paint();
 
@@ -63,7 +63,7 @@ public abstract class Chart extends View {
         return mMainPaint;
     }
 
-    public Paint getRectPaint() {
+    protected Paint getRectPaint() {
         Paint paint = new Paint();
 
         paint.setAntiAlias(true);
@@ -72,7 +72,7 @@ public abstract class Chart extends View {
         return paint;
     }
 
-    public Paint getLinePaint(int color) {
+    protected Paint getLinePaint(int color) {
         Paint paint = new Paint();
         paint.setStrokeWidth(UiUtils.dpToPx(mContext, 2));
         paint.setStyle(Paint.Style.STROKE);
