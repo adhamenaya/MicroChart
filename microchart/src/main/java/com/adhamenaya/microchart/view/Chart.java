@@ -63,6 +63,17 @@ public abstract class Chart extends View {
         return mMainPaint;
     }
 
+    protected Paint getArcFillPaint() {
+        Paint mMainPaint = new Paint();
+
+        mMainPaint.setAntiAlias(true);
+        mMainPaint.setColor(mColor);
+        mMainPaint.setAntiAlias(true);
+        mMainPaint.setDither(true);
+        mMainPaint.setStyle(Paint.Style.FILL);
+        return mMainPaint;
+    }
+
     protected Paint getRectPaint() {
         Paint paint = new Paint();
 

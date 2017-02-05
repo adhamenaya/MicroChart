@@ -86,14 +86,32 @@ public class MainActivity extends AppCompatActivity {
         data2.add("bb","fr", 189);
         data2.add("bb","dv", 450);
         data2.add("bb","dv4", 234);
-
+        data2.add("ww","fr", 433);
+        data2.add("ww","dv", 123);
+        data2.add("ww","dv4", 183);
         areaChart.setDimension(500, 300);
         areaChart.setData(data2);
         frameLayout.addView(areaChart);
 
         // Harvey ball chart
         HarveyBallChart harveyBallChart = new HarveyBallChart(getApplicationContext());
+        harveyBallChart.setDimension(150, 300);
+        harveyBallChart.setData(25);
+        harveyBallChart.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart);
+        // Harvey ball chart
+        HarveyBallChart harveyBallChart2= new HarveyBallChart(getApplicationContext());
+        harveyBallChart2.setDimension(150, 300);
+        harveyBallChart2.setData(50);
+        harveyBallChart2.setColor(Color.BLUE);
+        frameLayout.addView(harveyBallChart2);
+        // Harvey ball chart
+        HarveyBallChart harveyBallChart3 = new HarveyBallChart(getApplicationContext());
+        harveyBallChart3.setDimension(150, 300);
+        harveyBallChart3.setData(75);
+        harveyBallChart3.setColor(Color.BLUE);
+        frameLayout.addView(harveyBallChart3);
+
 
     }
 }
