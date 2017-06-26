@@ -38,8 +38,8 @@ public class ColumnChart extends Chart {
 
             // Calculate height unit
             // Calculate 80% of the total height
-            float height08 = mHeight * 0.8f;
-            mHeightUnit = height08 / mChartData.getMax();
+            float heightRatio = mHeight * 0.8f;
+            mHeightUnit = heightRatio / mChartData.getMax();
 
 
         }

@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import com.adhamenaya.microchart.model.ChartData;
 import com.adhamenaya.microchart.view.AreaChart;
 import com.adhamenaya.microchart.view.ColumnChart;
+import com.adhamenaya.microchart.view.DeltaChart;
 import com.adhamenaya.microchart.view.HarveyBallChart;
 import com.adhamenaya.microchart.view.RadialChart;
 
@@ -22,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout frameLayout = (LinearLayout) findViewById(R.id.lyt_main);
 
-        RadialChart radialChart = new RadialChart(getApplicationContext());
+       RadialChart radialChart = new RadialChart(getApplicationContext());
         radialChart.setMax(100);
         radialChart.setData(30);
         radialChart.setColor(Color.GREEN);
-        radialChart.setDimension(300, 300);
+        radialChart.setDimension(200, 200);
         frameLayout.addView(radialChart);
 
         ColumnChart columnChart = new ColumnChart(getApplicationContext());
@@ -42,17 +43,6 @@ public class MainActivity extends AppCompatActivity {
         data.add("e8", 300);
         data.add("b26", 200);
         data.add("c47", 350);
-        data.add("c38", 250);
-        data.add("c58", 650);
-        data.add("c68", 850);
-        data.add("d8", 340);
-        data.add("e8", 300);
-        data.add("e78", 300);
-        data.add("b276", 200);
-        data.add("c477", 350);
-        data.add("7c38", 250);
-        data.add("c758", 650);
-        data.add("c678", 850);
         data.add("7d81", 340);
         data.add("e781", 300);
         data.add("c51", 650);
@@ -72,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         frameLayout.addView(columnChart);
 
         // Area chart
+
         AreaChart areaChart = new AreaChart(getApplicationContext());
         ChartData data2 = new ChartData();
 
@@ -99,12 +90,7 @@ public class MainActivity extends AppCompatActivity {
         harveyBallChart.setData(25);
         harveyBallChart.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart);
-        // Harvey ball chart
-        HarveyBallChart harveyBallChart2= new HarveyBallChart(getApplicationContext());
-        harveyBallChart2.setDimension(150, 300);
-        harveyBallChart2.setData(50);
-        harveyBallChart2.setColor(Color.BLUE);
-        frameLayout.addView(harveyBallChart2);
+
         // Harvey ball chart
         HarveyBallChart harveyBallChart3 = new HarveyBallChart(getApplicationContext());
         harveyBallChart3.setDimension(150, 300);
@@ -112,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
         harveyBallChart3.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart3);
 
+     // Delta ball chart
+     DeltaChart deltaChart = new DeltaChart(getApplicationContext());
+     deltaChart.setDimension(150, 300);
+     deltaChart.setValues(-70,100);
+     deltaChart.setColor(Color.BLUE);
+     frameLayout.addView(deltaChart);
 
     }
 }
