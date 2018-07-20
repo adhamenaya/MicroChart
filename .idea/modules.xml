@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MicroChart.iml" filepath="$PROJECT_DIR$/MicroChart.iml" />
+      <module fileurl="file://E:\Projects\MicroChart\MicroChart.iml" filepath="E:\Projects\MicroChart\MicroChart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Projects\MicroChart\app\app.iml" filepath="E:\Projects\MicroChart\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/microchart/microchart.iml" filepath="$PROJECT_DIR$/microchart/microchart.iml" />
+      <module fileurl="file://E:\Projects\MicroChart\microchart\microchart.iml" filepath="E:\Projects\MicroChart\microchart\microchart.iml" />
     </modules>
   </component>
 </project>

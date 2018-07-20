@@ -100,4 +100,14 @@ public class ColumnChart extends Chart {
             iterator.remove();
         }
     }
+
+    @Override
+    float getConvertHeight(float height) {
+        return 0;
+    }
+
+    @Override
+    float getConvertedWidth(float width) {
+        return 0;
+    }
 }

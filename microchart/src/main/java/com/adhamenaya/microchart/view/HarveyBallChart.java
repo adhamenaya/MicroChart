@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -123,5 +122,15 @@ public class HarveyBallChart extends Chart {
     @Override
     public void setData(ChartData data) {
 
+    }
+
+    @Override
+    float getConvertHeight(float height) {
+        return 0;
+    }
+
+    @Override
+    float getConvertedWidth(float width) {
+        return 0;
     }
 }

@@ -151,4 +151,14 @@ public class RadialChart extends Chart {
     public void setData(ChartData data) {
 
     }
+
+    @Override
+    float getConvertHeight(float height) {
+        return 0;
+    }
+
+    @Override
+    float getConvertedWidth(float width) {
+        return 0;
+    }
 }

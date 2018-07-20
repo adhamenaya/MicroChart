@@ -74,6 +74,15 @@ public abstract class Chart extends View {
         return mMainPaint;
     }
 
+    protected Paint getColoredPaint(int color) {
+        Paint paint = new Paint();
+
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(color);
+        return paint;
+    }
+
     protected Paint getRectPaint() {
         Paint paint = new Paint();
 
@@ -114,4 +123,8 @@ public abstract class Chart extends View {
 
         return size;
     }
+
+    abstract float getConvertedWidth(float width);
+
+    abstract float getConvertHeight(float height);
 }

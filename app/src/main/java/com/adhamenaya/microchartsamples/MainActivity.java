@@ -22,14 +22,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         LinearLayout frameLayout = (LinearLayout) findViewById(R.id.lyt_main);
-
-       RadialChart radialChart = new RadialChart(getApplicationContext());
+        // region RadialChart
+        RadialChart radialChart = new RadialChart(getApplicationContext());
         radialChart.setMax(100);
         radialChart.setData(30);
         radialChart.setColor(Color.GREEN);
         radialChart.setDimension(200, 200);
         frameLayout.addView(radialChart);
-
+        // endregion
+        // region ColumnChart
         ColumnChart columnChart = new ColumnChart(getApplicationContext());
         columnChart.setDimension(500, 200);
         ChartData data = new ChartData();
@@ -60,50 +61,53 @@ public class MainActivity extends AppCompatActivity {
         columnChart.setData(data);
         columnChart.setColor(Color.BLUE);
         frameLayout.addView(columnChart);
-
-        // Area chart
+//endregion
+        // region Area chart
 
         AreaChart areaChart = new AreaChart(getApplicationContext());
         ChartData data2 = new ChartData();
 
-        data2.add("sami","c", 120);
-        data2.add("sami","d", 150);
-        data2.add("sami","dd", 170);
-        data2.add("sami","dd2", 140);
-        data2.add("sami","dd3", 110);
-        data2.add("aa","dd2", 220);
-        data2.add("aa","dd3", 230);
-        data2.add("aa","fr", 270);
-        data2.add("bb","fr", 189);
-        data2.add("bb","dv", 450);
-        data2.add("bb","dv4", 234);
-        data2.add("ww","fr", 433);
-        data2.add("ww","dv", 123);
-        data2.add("ww","dv4", 183);
+        data2.add("sami", "c", 120);
+        data2.add("sami", "d", 150);
+        data2.add("sami", "dd", 170);
+        data2.add("sami", "dd2", 140);
+        data2.add("sami", "dd3", 110);
+        data2.add("aa", "dd2", 220);
+        data2.add("aa", "dd3", 230);
+        data2.add("aa", "fr", 270);
+        data2.add("bb", "fr", 189);
+        data2.add("bb", "dv", 450);
+        data2.add("bb", "dv4", 234);
+        data2.add("ww", "fr", 433);
+        data2.add("ww", "dv", 123);
+        data2.add("ww", "dv4", 183);
         areaChart.setDimension(500, 300);
         areaChart.setData(data2);
         frameLayout.addView(areaChart);
-
-        // Harvey ball chart
+// endregion
+        // region Harvey ball chart
         HarveyBallChart harveyBallChart = new HarveyBallChart(getApplicationContext());
         harveyBallChart.setDimension(150, 300);
         harveyBallChart.setData(25);
         harveyBallChart.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart);
-
-        // Harvey ball chart
+// endregion
+        //region Harvey ball chart
         HarveyBallChart harveyBallChart3 = new HarveyBallChart(getApplicationContext());
         harveyBallChart3.setDimension(150, 300);
         harveyBallChart3.setData(75);
         harveyBallChart3.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart3);
+//endregion
 
-     // Delta ball chart
-     DeltaChart deltaChart = new DeltaChart(getApplicationContext());
-     deltaChart.setDimension(150, 300);
-     deltaChart.setValues(-70,100);
-     deltaChart.setColor(Color.BLUE);
-     frameLayout.addView(deltaChart);
+        //region Delta ball chart
+        DeltaChart deltaChart = new DeltaChart(getApplicationContext());
+        deltaChart.setDimension(400, 100);
+        deltaChart.setValues(-16, 35);
+      //  deltaChart.setValues(-16, 35);
+        deltaChart.setColor(Color.BLUE);
+        frameLayout.addView(deltaChart);
+        //endregion
 
     }
 }
