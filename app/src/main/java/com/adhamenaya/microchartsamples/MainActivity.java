@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout frameLayout = (LinearLayout) findViewById(R.id.lyt_main);
 
-       RadialChart radialChart = new RadialChart(getApplicationContext());
+        RadialChart radialChart = new RadialChart(getApplicationContext());
         radialChart.setMax(100);
         radialChart.setData(30);
         radialChart.setColor(Color.GREEN);
@@ -66,20 +66,20 @@ public class MainActivity extends AppCompatActivity {
         AreaChart areaChart = new AreaChart(getApplicationContext());
         ChartData data2 = new ChartData();
 
-        data2.add("sami","c", 120);
-        data2.add("sami","d", 150);
-        data2.add("sami","dd", 170);
-        data2.add("sami","dd2", 140);
-        data2.add("sami","dd3", 110);
-        data2.add("aa","dd2", 220);
-        data2.add("aa","dd3", 230);
-        data2.add("aa","fr", 270);
-        data2.add("bb","fr", 189);
-        data2.add("bb","dv", 450);
-        data2.add("bb","dv4", 234);
-        data2.add("ww","fr", 433);
-        data2.add("ww","dv", 123);
-        data2.add("ww","dv4", 183);
+        data2.add("sami", "c", 120);
+        data2.add("sami", "d", 150);
+        data2.add("sami", "dd", 170);
+        data2.add("sami", "dd2", 140);
+        data2.add("sami", "dd3", 110);
+        data2.add("aa", "dd2", 220);
+        data2.add("aa", "dd3", 230);
+        data2.add("aa", "fr", 270);
+        data2.add("bb", "fr", 189);
+        data2.add("bb", "dv", 450);
+        data2.add("bb", "dv4", 234);
+        data2.add("ww", "fr", 433);
+        data2.add("ww", "dv", 123);
+        data2.add("ww", "dv4", 183);
         areaChart.setDimension(500, 300);
         areaChart.setData(data2);
         frameLayout.addView(areaChart);
@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
         harveyBallChart3.setColor(Color.BLUE);
         frameLayout.addView(harveyBallChart3);
 
-     // Delta ball chart
-     DeltaChart deltaChart = new DeltaChart(getApplicationContext());
-     deltaChart.setDimension(150, 300);
-     deltaChart.setValues(-70,100);
-     deltaChart.setColor(Color.BLUE);
-     frameLayout.addView(deltaChart);
+        // Delta ball chart
+        DeltaChart deltaChart = new DeltaChart(getApplicationContext());
+        deltaChart.setDimension(150, 300);
+        deltaChart.setValues(-70, 100);
+        deltaChart.setColor(Color.BLUE);
+        frameLayout.addView(deltaChart);
 
     }
 }

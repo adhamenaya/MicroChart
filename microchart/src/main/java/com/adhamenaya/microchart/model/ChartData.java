@@ -75,7 +75,7 @@ public class ChartData {
     }
 
     public boolean checkAxisCorrectness(String axisKey) {
-        return axises.containsKey(axisKey) ? true : false;
+        return axises.containsKey(axisKey);
     }
 
     public void setAxis(String name, Collection<String> values) {
